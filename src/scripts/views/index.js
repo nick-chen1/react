@@ -2,13 +2,11 @@
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Guide } from "./guide";
 import { App } from "./app";
-import { Cart } from "./cart";
-import { Classify } from "./classify";
-import { Home } from "./home";
-import { My } from "./my";
 import PropTypes from "prop-types"
 import { Search } from "./search";
 import { Login } from "./login";
+import {Message} from "./message"
+import {Food} from "./food"
 
 export default class IndexView extends Component {
     render() {
@@ -38,12 +36,10 @@ export class Layout extends Component {
                 <Route path="/" exact render={chong} />
                 <Route path="/guide" component={Guide}></Route>
                 <Route path="/app" component={App}></Route>
-                {/* <Route path="/cart" component={Cart}></Route>
-                <Route path="/classify" component={Classify}></Route>
-                <Route path="/home" component={Home}></Route>
-                <Route path="/my" component={My}></Route> */}
                 <Route path="/search" component={Search} ></Route>
                 <Route path="/login" component={Login}></Route>
+                <Route path="/message" component ={Message} ></Route>
+                <Route path="/food/detail/:foodId?" component={Food}></Route>
 
                 <Route render={() => (<Redirect to="/app/" />)}></Route>
             </Switch>

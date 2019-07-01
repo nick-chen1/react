@@ -121,18 +121,29 @@ module.exports = {
         publicPath:"",
         proxy:{  // 反向代理 
             "/vue": {
-                target:"http://localhost:1901/",
+                target:"http://47.102.133.200:1901/",
                 changeOrigin: true,
             },
             "/react": {
-                target:"http://localhost:1901/",
+                target:"http://47.102.133.200:1901/",
                 changeOrigin: true,
             }
         }
+        // proxy:{  // 反向代理 
+        //     "/vue": {
+        //         target:"http://localhost:1901/",
+        //         changeOrigin: true,
+        //     },
+        //     "/react": {
+        //         target:"http://localhost:1901/",
+        //         changeOrigin: true,
+        //     }
+        // }
     },
 
     plugins:[   // 声明使用的插件  
-        new openBrowserWebpackPlugin({url:"http://localhost:8000"}),
+        new openBrowserWebpackPlugin({url:"http://0.0.0.0:8000"}),
+        // new openBrowserWebpackPlugin({url:"http://localhost:8000"}),
 
         new htmlWebpackPlugin({
             template:"./public/index.html",

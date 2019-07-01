@@ -24,7 +24,7 @@ export class Head extends Component {
                 icon={show && <Icon type="left" />}
                 onLeftClick={() => this.goBack(show)}
                 rightContent={[
-                    <Icon key="0" type="search" style={{ marginRight: '16px' }} onClick={this.goSearch} />,
+                    // <Icon key="0" type="search" style={{ marginRight: '16px' }} onClick={this.goSearch} />,
                     // <Icon key="1" type="ellipsis" />,
                 ]}
            style={{backgroundColor:'red'}}  >{title}</NavBar>

@@ -1,6 +1,8 @@
 
 import axios from "axios";
 
+// axios.defaults.baseURL = "http://47.102.133.200:1901/";  // 基本路径 
+
 // 前端 数据请求  配置 header  添加 token  
 import history from "./history"
 
@@ -11,12 +13,12 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';/
 import { Toast } from 'antd-mobile';
 
 const load = (msg)=>{
-    Toast.loading(msg, 10, () => {
-        console.log('Load complete !!!');
-    });
+    // Toast.loading(msg, 10, () => {
+        // console.log('Load complete !!!');
+    // });
 }
 const info = (msg)=>{
-    Toast.info(msg, 1);
+    // Toast.info(msg, 1);
 }
 // axios 拦截器 
 //  添加一个请求拦截器  request 
@@ -27,13 +29,13 @@ axios.interceptors.request.use(function (config) {
         token = userInfo.token;
     }
     config.headers.common['token'] = token;
-    Toast.hide();
-    load("加载中");
+    // Toast.hide();
+    // load("加载中");
     return config;
   }, function (error) {
     // Do something with request error
-    info("未知错误-req");
-    Toast.hide();
+    // info("未知错误-req");
+    // Toast.hide();
     return Promise.reject(error);
 });
 
@@ -52,8 +54,8 @@ axios.interceptors.response.use(function (response) {
 
     return response;
   }, function (error) {
-    info("未知错误-res");
-    Toast.hide();
+    // info("未知错误-res");
+    // Toast.hide();
     return Promise.reject(error);
   })
 
